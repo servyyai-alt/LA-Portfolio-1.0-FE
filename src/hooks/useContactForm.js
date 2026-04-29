@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getApiUrl } from "@/utils/api";
 
 const INITIAL_FORM = { name: "", email: "", projectBrief: "" };
 
@@ -9,8 +10,6 @@ export function useContactForm() {
     const [formData, setFormData] = useState(INITIAL_FORM);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [status, setStatus] = useState({ type: "", message: "" });
-
-    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -23,7 +22,7 @@ export function useContactForm() {
         setStatus({ type: "", message: "" });
 
         try {
-            const response = await fetch(`${apiBaseUrl}/api/contacts`, {
+            const response = await fetch(getApiUrl("/api/contacts"), {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

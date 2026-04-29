@@ -24,22 +24,31 @@ function PageLoader() {
 
 function AnimatedRoutes() {
     const location = useLocation();
+    const isAdminRoute = location.pathname.startsWith("/admin");
+
     return (
-        <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-                {routes.map(({ path, element: Page }) => (
-                    <Route
-                        key={path}
-                        path={path}
-                        element={
-                            <Suspense fallback={<PageLoader />}>
-                                <Page />
-                            </Suspense>
-                        }
-                    />
-                ))}
-            </Routes>
-        </AnimatePresence>
+        <>
+            {!isAdminRoute && <Header />}
+            <main>
+                <AnimatePresence mode="wait">
+                    <Routes location={location} key={location.pathname}>
+                        {routes.map(({ path, element: Page }) => (
+                            <Route
+                                key={path}
+                                path={path}
+                                element={
+                                    <Suspense fallback={<PageLoader />}>
+                                        <Page />
+                                    </Suspense>
+                                }
+                            />
+                        ))}
+                    </Routes>
+                </AnimatePresence>
+            </main>
+            {!isAdminRoute && <Footer />}
+            {!isAdminRoute && <WhatsAppButton />}
+        </>
     );
 }
 
@@ -48,12 +57,7 @@ export default function App() {
         <Router>
             <div className="min-h-screen bg-white text-ink font-body">
                 <ScrollToSection />
-                <Header />
-                <main>
-                    <AnimatedRoutes />
-                </main>
-                <Footer />
-                <WhatsAppButton />
+                <AnimatedRoutes />
             </div>
         </Router>
     );
