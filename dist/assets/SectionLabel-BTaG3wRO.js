@@ -1,0 +1,1 @@
+import{j as s}from"./index-uSDaKWJd.js";function c({children:t,theme:e="light"}){const o=e==="dark"?"text-accent":"text-cobalt";return s.jsx("p",{className:`text-xs font-semibold uppercase tracking-[0.25em] ${o} mb-4`,children:t})}export{c as S};
