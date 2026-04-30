@@ -15,7 +15,7 @@ export const CAPABILITIES = [
         number: "02",
     },
     {
-        title: "AI Solutions",
+        title: "AI Solutions & Automation",
         description:
             "Automate workflows, generate content, and improve decision-making using AI-powered systems built for your use case.",
         iconKey: "ai",
@@ -27,5 +27,12 @@ export const CAPABILITIES = [
             "End-to-end development of CRM, ERP, and enterprise-grade platforms. Built for scale, security, and longevity.",
         iconKey: "product",
         number: "04",
+    },
+    {
+         title: "Digital Marketing",
+         description:
+           "Data-driven digital marketing strategies including SEO, social media, and paid campaigns      to increase visibility, generate leads, and grow your business online.",
+         iconKey: "marketing",
+         number: "05",
     },
 ];

@@ -77,10 +77,10 @@ export default function StatsSection() {
                             <div className="inline-flex items-center gap-2 rounded-full border border-cobalt/15 bg-cobalt/5 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-cobalt">
                                 Performance snapshot
                             </div>
-                            <h2 className="mt-5 text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl lg:text-[3rem]">
+                            <h2 className="type-section-title mt-5 text-ink">
                                 Clear numbers presented in a lighter, more professional format.
                             </h2>
-                            <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
+                            <p className="type-body-copy mt-4 max-w-xl ">
                                 These metrics support credibility while keeping the visual tone clean,
                                 modern, and easier to scan in a bright product-led layout.
                             </p>
@@ -91,7 +91,7 @@ export default function StatsSection() {
                                 (item) => (
                                     <div
                                         key={item}
-                                        className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-[0_10px_25px_rgba(15,23,42,0.04)]"
+                                        className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm  shadow-[0_10px_25px_rgba(15,23,42,0.04)]"
                                     >
                                         {item}
                                     </div>
@@ -118,7 +118,7 @@ export default function StatsSection() {
 
                                 <div className="relative flex min-h-[220px] flex-col justify-between">
                                     <div className="flex items-start justify-between gap-3">
-                                        <p className="max-w-[180px] text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">
+                                        <p className="max-w-[180px] text-[11px] font-bold uppercase tracking-[0.22em] ">
                                             {stat.label}
                                         </p>
                                         <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-cobalt">
@@ -131,7 +131,7 @@ export default function StatsSection() {
                                             {triggered ? <CountUp end={stat.value} duration={2.4} /> : "0"}
                                             <span className="text-cobalt">{stat.suffix}</span>
                                         </p>
-                                        <p className="mt-4 max-w-[220px] text-sm leading-6 text-slate-600">
+                                        <p className="mt-4 max-w-[220px] text-sm leading-6 ">
                                             {statNotes[index]}
                                         </p>
                                     </div>

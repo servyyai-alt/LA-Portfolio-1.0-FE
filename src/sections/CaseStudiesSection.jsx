@@ -35,7 +35,7 @@ export default function CaseStudiesSection() {
                     className="text-center mb-14"
                 >
                     <SectionLabel>Case Studies</SectionLabel>
-                    <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-[-0.02em]">
+                    <h2 className="type-section-title text-ink">
                         Selected Technical Deployments
                     </h2>
                 </motion.div>
@@ -61,13 +61,13 @@ export default function CaseStudiesSection() {
                                 <div className="flex items-center justify-between mb-3">
                                     <h3 className="font-display text-base font-bold text-ink">{item.title}</h3>
                                     <span
-                                        className={`text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${STATUS_COLOR[item.status] || "bg-mist text-slate-500"
+                                        className={`text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${STATUS_COLOR[item.status] || "bg-mist "
                                             }`}
                                     >
                                         {item.status}
                                     </span>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed mb-4">
+                                <p className="text-sm  leading-relaxed mb-4">
                                     {item.description}
                                 </p>
                                 <div className="flex flex-wrap gap-2">

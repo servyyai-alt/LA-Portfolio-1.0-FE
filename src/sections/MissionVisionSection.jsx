@@ -31,14 +31,14 @@ export default function MissionVisionSection() {
                         transition={{ duration: 0.6 }}
                     >
                         <SectionLabel>Our Direction</SectionLabel>
-                        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-[-0.02em] leading-[1.1]">
+                        <h2 className="type-section-title text-ink">
                             Mission &<br />Vision
                         </h2>
-                        <p className="mt-6 max-w-md text-[15px] leading-[1.75] text-slate-600">
+                        <p className="type-body-copy mt-6 max-w-md ">
                             Guided by a commitment to excellence and a forward-looking perspective on the
                             digital landscape.
                         </p>
-                        <p className="mt-4 max-w-md text-sm leading-[1.75] text-slate-500">
+                        <p className="type-body-copy mt-4 max-w-md ">
                             Our core philosophy revolves around creating lasting value through
                             technological superiority and strategic foresight.
                         </p>
@@ -64,7 +64,7 @@ export default function MissionVisionSection() {
                                         <h3 className="mb-3 font-display text-lg font-bold text-ink sm:text-xl">
                                             {item.title}
                                         </h3>
-                                        <p className="text-sm leading-[1.75] text-slate-600 sm:text-[15px]">
+                                        <p className="text-sm leading-[1.75]  sm:text-[15px]">
                                             {item.text}
                                         </p>
                                     </div>

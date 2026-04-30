@@ -125,7 +125,7 @@ export default function ProjectHeroSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-ink leading-[1.08] tracking-[-0.03em]"
+                        className="type-hero-title text-ink"
                     >
                         Projects Built With
                         <br />
@@ -139,7 +139,7 @@ export default function ProjectHeroSection() {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="mt-5 max-w-[560px] text-sm sm:text-base text-slate-600 leading-7"
+                        className="type-body-copy mt-5 max-w-[560px] "
                     >
                         Explore premium digital products, SaaS platforms,
                         enterprise solutions, and scalable systems crafted for
@@ -160,14 +160,15 @@ export default function ProjectHeroSection() {
                         >
                             Explore Our Work
                         </Button>
-
                         <Button
-                            to="/#capabilities"
-                            variant="ghost"
-                            className="border-slate-200 bg-white text-black hover:bg-slate-50"
+                          to="/#capabilities"
+                          variant="ghost"
+                          className="px-6 py-3 rounded-full border border-cobalt/30 bg-white !text-[#3D72FF] hover:bg-cobalt                         hover:!text-black transition-all duration-300 shadow-md hover:shadow-lg flex items-center                         gap-2"
                         >
-                            Our Expertise
+                          Our Expertise
                         </Button>
+
+
                     </motion.div>
                 </div>
             </div>

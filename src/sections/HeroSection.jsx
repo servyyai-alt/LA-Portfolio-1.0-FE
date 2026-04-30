@@ -41,28 +41,28 @@ export default function HeroSection() {
             <div className="container-xl relative">
                 <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.02fr)_minmax(420px,0.98fr)] xl:gap-16">
                     <div className="max-w-3xl">
-                        <motion.div {...fadeUp(0)}>
+                        {/* <motion.div {...fadeUp(0)}>
                             <div className="inline-flex items-center gap-3 rounded-full border border-cobalt/15 bg-white/85 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-cobalt shadow-[0_18px_50px_rgba(26,86,255,0.08)] backdrop-blur-xl">
                                 <span className="flex h-5 w-5 items-center justify-center rounded-full border border-cyan-300/40 bg-cyan-100">
                                     <span className="h-2 w-2 rounded-full bg-cobalt" />
                                 </span>
                                 Professional Digital Product Studio
                             </div>
-                        </motion.div>
+                        </motion.div> */}
 
                         <motion.h1
                             {...fadeUp(0.08)}
-                            className="mt-8 max-w-4xl leading-snug text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[2.6rem] font-bold leading-[1.1] tracking-[-0.03em] text-ink"
+                            className="type-hero-title mt-8 max-w-4xl text-ink"
                         >
                             Modern digital experiences
-                            <span className="block text-4xl bg-[linear-gradient(135deg,#0b0f1e_0%,#1a56ff_46%,#49d6ff_100%)] mt-3 bg-clip-text text-transparent">
+                            <span className="block mt-3 bg-[linear-gradient(135deg,#0b0f1e_0%,#1a56ff_46%,#49d6ff_100%)] bg-clip-text text-transparent">
                                 built to grow your brand.
                             </span>
                         </motion.h1>
                         
                         <motion.p
                             {...fadeUp(0.16)}
-                            className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg"
+                            className="type-body-copy mt-6 max-w-2xl  sm:text-lg"
                         >
                             We design SaaS platforms, business portals, and AI-powered products
                             with clean UI, strong performance, and premium user experience.
@@ -92,57 +92,13 @@ export default function HeroSection() {
                                     />
                                 </svg>
                             </Button>
-                            {/* <Button
-                                to="/projects"
-                                variant="ghost"
-                                className="group relative overflow-hidden border border-cobalt/15 bg-white text-cobalt px-7 py-3.5 rounded-full shadow-[0_18px_45px_rgba(26,86,255,0.14)] ring-1 ring-cobalt/10 hover:-translate-y-0.5 hover:border-cobalt/30 hover:bg-[linear-gradient(135deg,#eff6ff_0%,#dff4ff_100%)] hover:shadow-[0_24px_60px_rgba(26,86,255,0.2)]"
-                            >
-                                <span className="absolute inset-0 bg-[linear-gradient(135deg,rgba(73,214,255,0.14),rgba(26,86,255,0.08))] opacity-100 transition-opacity duration-300 group-hover:opacity-0" />
-                                <span className="relative inline-flex items-center gap-2">
-                                    <span className="flex h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_0_6px_rgba(73,214,255,0.16)]" />
-                                    Explore Our Work
-                                    <svg
-                                        viewBox="0 0 16 16"
-                                        fill="none"
-                                        className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                                    >
-                                        <path
-                                            d="M3 8h10M9 4l4 4-4 4"
-                                            stroke="currentColor"
-                                            strokeWidth="1.5"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                    </svg>
-                                </span>
-                            </Button> */}
+
                             <Button
-                                to="/projects"
-                                variant="ghost"
-                                className="group relative overflow-hidden border border-cobalt/20 bg-white !text-black px-7 py-3.5 rounded-full shadow-[0_18px_45px_rgba                            (26,86,255,0.14)] ring-1 ring-cobalt/10 transition-all duration-300 hover:-translate-y-1 hover:border-cobalt/50 hover:bg-[linear-gradient                            (135deg,#1a56ff_0%,#49d6ff_100%)] hover:text-white hover:shadow-[0_28px_70px_rgba(26,86,255,0.28)]"
+                              to="/projects"
+                              variant="ghost"
+                              className="px-6 py-3 rounded-full border border-cobalt/30 bg-white !text-[#3D72FF] hover:bg-cobalt                             hover:!text-black transition-all duration-300 shadow-md hover:shadow-lg flex items-center                             gap-2"
                             >
-                                {/* Default soft background glow */}
-                                <span className="absolute inset-0 bg-[linear-gradient(135deg,rgba(73,214,255,0.14),rgba(26,86,255,0.08))] opacity-100 transition-opacity                             duration-300 group-hover:opacity-0" />
-                            
-                                <span className="relative inline-flex items-center gap-2 font-medium">
-        <span className="flex h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_0_6px_rgba(73,214,255,0.16)] group-hover:bg-white group-hover:shadow-[0_0_0_6px_rgba(255,255,255,0.18)] transition-all duration-300" />
-
-        Explore Our Work
-
-        <svg
-            viewBox="0 0 16 16"
-            fill="none"
-            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-        >
-            <path
-                d="M3 8h10M9 4l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-                                </span>
+                              Explore Our Work →
                             </Button>
                         </motion.div>
 
@@ -153,7 +109,7 @@ export default function HeroSection() {
                             {trustPills.map((pill) => (
                                 <div
                                     key={pill}
-                                    className="rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-sm text-slate-700 shadow-[0_12px_35px_rgba(15,23,42,0.05)]"
+                                    className="rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-sm  shadow-[0_12px_35px_rgba(15,23,42,0.05)]"
                                 >
                                     {pill}
                                 </div>
@@ -172,21 +128,7 @@ export default function HeroSection() {
                                     <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-cobalt">
                                         0{index + 1}
                                     </p>
-                                    <p className="mt-3 text-sm leading-6 text-slate-700">{item}</p>
-                                </div>
-                            ))}
-                        </motion.div>
-
-                        <motion.div
-                            {...fadeUp(0.48)}
-                            className="mt-12 flex flex-wrap gap-6 border-t border-slate-200 pt-7"
-                        >
-                            {HERO_STATS.map((stat) => (
-                                <div key={stat.label} className="min-w-[140px]">
-                                    <p className="text-3xl font-black text-ink sm:text-[2rem]">{stat.num}</p>
-                                    <p className="mt-1 text-[11px] uppercase tracking-[0.22em] text-slate-500">
-                                        {stat.label}
-                                    </p>
+                                    <p className="mt-3 text-sm leading-6 ">{item}</p>
                                 </div>
                             ))}
                         </motion.div>
@@ -199,14 +141,14 @@ export default function HeroSection() {
                         className="relative mx-auto w-full max-w-[660px] lg:mx-0"
                     >
                         <motion.div
-                            className="absolute -left-3 top-10 hidden rounded-2xl border border-slate-200 bg-white/95 px-4 py-3 text-sm text-slate-700 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl md:flex"
+                            className="absolute -left-3 top-10 hidden rounded-2xl border border-slate-200 bg-white/95 px-4 py-3 text-sm  shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl md:flex"
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
                         >
                             <div className="mr-3 h-10 w-10 rounded-2xl bg-[linear-gradient(135deg,#49d6ff_0%,#1a56ff_100%)]" />
                             <div>
                                 <p className="font-bold text-ink">Professional product screens</p>
-                                <p className="text-xs text-slate-500">Clear structure and stronger trust</p>
+                                <p className="text-xs ">Clear structure and stronger trust</p>
                             </div>
                         </motion.div>
 
@@ -229,11 +171,11 @@ export default function HeroSection() {
                                     <div className="rounded-3xl border border-slate-200 bg-[linear-gradient(180deg,#f8fbff_0%,#eef5ff_100%)] p-5">
                                         <div className="flex items-start justify-between gap-4">
                                             <div>
-                                                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
+                                                <p className="text-[11px] font-bold uppercase tracking-[0.18em] ">
                                                     Product performance
                                                 </p>
                                                 <p className="mt-2 text-4xl font-black text-ink">89%</p>
-                                                <p className="mt-2 text-sm text-slate-600">
+                                                <p className="mt-2 text-sm ">
                                                     Better clarity across user journeys and delivery reporting.
                                                 </p>
                                             </div>
@@ -266,7 +208,7 @@ export default function HeroSection() {
                                                             }}
                                                         />
                                                     </div>
-                                                    <span className="w-10 text-right text-xs text-slate-500">
+                                                    <span className="w-10 text-right text-xs ">
                                                         {value}%
                                                     </span>
                                                 </motion.div>
@@ -283,7 +225,7 @@ export default function HeroSection() {
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: 0.42 + index * 0.1, duration: 0.5 }}
                                             >
-                                                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
+                                                <p className="text-[11px] font-bold uppercase tracking-[0.18em] ">
                                                     {card.label}
                                                 </p>
                                                 <div className="mt-2 flex items-end justify-between gap-3">

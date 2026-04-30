@@ -146,7 +146,7 @@
 //                     <h1 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
 //                         Contact inbox for Least Action
 //                     </h1>
-//                     <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+//                     <p className="mt-3 max-w-2xl text-sm leading-6  sm:text-base">
 //                         Sign in to review every contact submission, including who reached out,
 //                         their email, and the project brief they shared.
 //                     </p>
@@ -155,13 +155,13 @@
 //                 {!token ? (
 //                     <div className="mx-auto w-full max-w-lg rounded-[28px] border border-slate-200 bg-white p-8 shadow-xl">
 //                         <h2 className="text-2xl font-semibold text-slate-900">Admin login</h2>
-//                         <p className="mt-2 text-sm text-slate-500">
+//                         <p className="mt-2 text-sm ">
 //                             Use the admin credentials configured in the backend environment.
 //                         </p>
 
 //                         <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
 //                             <label className="block">
-//                                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+//                                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ">
 //                                     Email
 //                                 </span>
 //                                 <input
@@ -176,7 +176,7 @@
 //                             </label>
 
 //                             <label className="block">
-//                                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+//                                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ">
 //                                     Password
 //                                 </span>
 //                                 <input
@@ -209,7 +209,7 @@
 //                     <div className="grid gap-6">
 //                         <div className="flex flex-col gap-4 rounded-[28px] border border-slate-200 bg-white p-6 shadow-lg sm:flex-row sm:items-center sm:justify-between">
 //                             <div>
-//                                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+//                                 <p className="text-sm font-semibold uppercase tracking-[0.2em] ">
 //                                     Signed in
 //                                 </p>
 //                                 <p className="mt-2 text-lg font-semibold text-slate-900">{adminEmail}</p>
@@ -219,7 +219,7 @@
 //                                 <button
 //                                     type="button"
 //                                     onClick={() => loadContacts(token)}
-//                                     className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:text-slate-950"
+//                                     className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold  transition hover:border-slate-400 hover:text-slate-950"
 //                                 >
 //                                     Refresh contacts
 //                                 </button>
@@ -242,7 +242,7 @@
 //                         <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-xl">
 //                             <div className="border-b border-slate-100 px-6 py-5">
 //                                 <h2 className="text-xl font-semibold text-slate-900">Submitted contacts</h2>
-//                                 <p className="mt-1 text-sm text-slate-500">
+//                                 <p className="mt-1 text-sm ">
 //                                     {isLoadingContacts
 //                                         ? "Loading contact submissions..."
 //                                         : `${contacts.length} contact submission${contacts.length === 1 ? "" : "s"} found.`}
@@ -253,16 +253,16 @@
 //                                 <table className="min-w-full divide-y divide-slate-100">
 //                                     <thead className="bg-slate-50">
 //                                         <tr>
-//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] ">
 //                                                 Name
 //                                             </th>
-//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] ">
 //                                                 Email
 //                                             </th>
-//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] ">
 //                                                 Project brief
 //                                             </th>
-//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] ">
 //                                                 Submitted
 //                                             </th>
 //                                         </tr>
@@ -273,22 +273,22 @@
 //                                                 <td className="px-6 py-5 text-sm font-semibold text-slate-900">
 //                                                     {contact.name}
 //                                                 </td>
-//                                                 <td className="px-6 py-5 text-sm text-slate-600">
+//                                                 <td className="px-6 py-5 text-sm ">
 //                                                     <a className="hover:text-cobalt" href={`mailto:${contact.email}`}>
 //                                                         {contact.email}
 //                                                     </a>
 //                                                 </td>
-//                                                 <td className="px-6 py-5 text-sm leading-6 text-slate-600">
+//                                                 <td className="px-6 py-5 text-sm leading-6 ">
 //                                                     {contact.projectBrief}
 //                                                 </td>
-//                                                 <td className="px-6 py-5 text-sm text-slate-500">
+//                                                 <td className="px-6 py-5 text-sm ">
 //                                                     {formatDate(contact.createdAt)}
 //                                                 </td>
 //                                             </tr>
 //                                         ))}
 //                                         {!isLoadingContacts && contacts.length === 0 && (
 //                                             <tr>
-//                                                 <td colSpan="4" className="px-6 py-10 text-center text-sm text-slate-500">
+//                                                 <td colSpan="4" className="px-6 py-10 text-center text-sm ">
 //                                                     No contact messages yet.
 //                                                 </td>
 //                                             </tr>
@@ -470,7 +470,7 @@ export default function AdminDashboard() {
           {token && adminEmail && (
             <div className="flex items-center gap-3">
               <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-emerald-500" />
-              <span className="font-mono text-sm text-slate-500">
+              <span className="font-mono text-sm ">
                 {adminEmail}
               </span>
             </div>
@@ -489,7 +489,7 @@ export default function AdminDashboard() {
             Contact <span className="bg-gradient-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent">Inbox</span>
           </h1>
 
-          <p className="mt-4 max-w-2xl text-slate-500">
+          <p className="mt-4 max-w-2xl ">
             Review inbound project inquiries, manage contact submissions, and
             respond to prospective clients.
           </p>
@@ -498,13 +498,13 @@ export default function AdminDashboard() {
         {!token ? (
           <div className="max-w-md rounded-3xl border border-indigo-100 bg-white p-8 shadow-xl shadow-indigo-100/50">
             <h2 className="text-2xl font-semibold">Sign in to continue</h2>
-            <p className="mt-2 text-sm text-slate-500">
+            <p className="mt-2 text-sm ">
               Enter your admin credentials to access the contact inbox.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-5">
               <div>
-                <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ">
                   Email Address
                 </label>
                 <input
@@ -519,7 +519,7 @@ export default function AdminDashboard() {
               </div>
 
               <div>
-                <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ">
                   Password
                 </label>
                 <input
@@ -562,7 +562,7 @@ export default function AdminDashboard() {
 
               <div className="rounded-2xl border bg-white p-6 shadow-sm">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Session</p>
-                <p className="mt-3 truncate font-mono text-sm text-slate-500">{adminEmail}</p>
+                <p className="mt-3 truncate font-mono text-sm ">{adminEmail}</p>
               </div>
             </div>
 
@@ -643,11 +643,11 @@ export default function AdminDashboard() {
                               {contact.email}
                             </a>
                           </td>
-                          <td className="max-w-md px-6 py-5 text-slate-600">
+                          <td className="max-w-md px-6 py-5 ">
                             {contact.projectBrief}
                           </td>
                           <td className="px-6 py-5">
-                            <span className="rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-1 text-xs font-medium text-slate-500">
+                            <span className="rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-1 text-xs font-medium ">
                               {formatDate(contact.createdAt)}
                             </span>
                           </td>

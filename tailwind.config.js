@@ -16,8 +16,8 @@ export default {
                 cloud: "#f4f6fb",
             },
             fontFamily: {
-                display: ["Arial", '"Helvetica Neue"', "Helvetica", "sans-serif"],
-                body: ["Arial", '"Helvetica Neue"', "Helvetica", "sans-serif"],
+                display: ['"Segoe UI"', "Tahoma", "Geneva", "Verdana", "sans-serif"],
+                body: ['"Segoe UI"', "Tahoma", "Geneva", "Verdana", "sans-serif"],
             },
             boxShadow: {
                 glow: "0 0 60px rgba(26,86,255,0.18)",

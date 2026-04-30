@@ -52,7 +52,7 @@
 //                                         />
 //                                     </div>
 //                                     <div>
-//                                         <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1">
+//                                         <p className="text-xs font-semibold uppercase tracking-widest  mb-1">
 //                                             {item.label}
 //                                         </p>
 //                                         {item.href ? (
@@ -94,7 +94,7 @@
 //                                         value={formData.name}
 //                                         onChange={handleChange}
 //                                         required
-//                                         className="w-full bg-transparent border-b border-white/20 pb-2 text-sm text-white placeholder:text-slate-600 outline-none focus:border-cobalt transition-colors"
+//                                         className="w-full bg-transparent border-b border-white/20 pb-2 text-sm text-white placeholder: outline-none focus:border-cobalt transition-colors"
 //                                     />
 //                                 </div>
 //                                 <div>
@@ -108,7 +108,7 @@
 //                                         value={formData.email}
 //                                         onChange={handleChange}
 //                                         required
-//                                         className="w-full bg-transparent border-b border-white/20 pb-2 text-sm text-white placeholder:text-slate-600 outline-none focus:border-cobalt transition-colors"
+//                                         className="w-full bg-transparent border-b border-white/20 pb-2 text-sm text-white placeholder: outline-none focus:border-cobalt transition-colors"
 //                                     />
 //                                 </div>
 //                             </div>
@@ -124,7 +124,7 @@
 //                                     value={formData.projectBrief}
 //                                     onChange={handleChange}
 //                                     required
-//                                     className="w-full bg-transparent border-b border-white/20 pb-2 text-sm text-white placeholder:text-slate-600 outline-none focus:border-cobalt transition-colors resize-none"
+//                                     className="w-full bg-transparent border-b border-white/20 pb-2 text-sm text-white placeholder: outline-none focus:border-cobalt transition-colors resize-none"
 //                                 />
 //                             </div>
 
@@ -201,7 +201,7 @@ export default function ContactSection() {
                             Get In Touch
                         </SectionLabel>
 
-                        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-[-0.02em] leading-[1.1]">
+                        <h2 className="type-section-title text-slate-900">
                             Let’s Build Something
                             <br />
                             <span className="bg-gradient-to-r from-cobalt to-cyan-500 bg-clip-text text-transparent">
@@ -209,7 +209,7 @@ export default function ContactSection() {
                             </span>
                         </h2>
 
-                        <p className="mt-6 text-[15px] sm:text-base text-slate-600 leading-relaxed max-w-md">
+                        <p className="type-body-copy mt-6 max-w-md ">
                             Have an idea or need a reliable tech team?
                             Let’s discuss how we can help you build,
                             improve, and scale your digital product.
@@ -238,12 +238,12 @@ export default function ContactSection() {
                                         {item.href ? (
                                             <a
                                                 href={item.href}
-                                                className="text-sm sm:text-base text-slate-700 hover:text-cobalt transition-colors"
+                                                className="text-sm sm:text-base  hover:text-cobalt transition-colors"
                                             >
                                                 {item.value}
                                             </a>
                                         ) : (
-                                            <p className="text-sm sm:text-base text-slate-700">
+                                            <p className="text-sm sm:text-base ">
                                                 {item.value}
                                             </p>
                                         )}
@@ -269,7 +269,7 @@ export default function ContactSection() {
                         >
                             <div className="grid sm:grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-2">
+                                    <label className="block text-xs font-semibold uppercase tracking-widest  mb-2">
                                         Name
                                     </label>
 
@@ -285,7 +285,7 @@ export default function ContactSection() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-2">
+                                    <label className="block text-xs font-semibold uppercase tracking-widest  mb-2">
                                         Email
                                     </label>
 
@@ -302,7 +302,7 @@ export default function ContactSection() {
                             </div>
 
                             <div className="mt-6">
-                                <label className="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-2">
+                                <label className="block text-xs font-semibold uppercase tracking-widest  mb-2">
                                     Project Brief
                                 </label>
 

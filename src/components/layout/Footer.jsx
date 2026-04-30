@@ -1,37 +1,4 @@
-// import { Link } from "react-router-dom";
-// import { FOOTER_LINKS } from "@/constants/contact";
 
-// export default function Footer() {
-//     return (
-//         <footer className="bg-ink border-t border-white/[0.06]">
-//             <div className="container-xl py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-//                 <div>
-//                     <Link
-//                         to="/"
-//                         className="font-display text-xl font-bold text-white hover:text-accent transition-colors"
-//                     >
-//                         Least Action Company Pvt Ltd
-//                     </Link>
-//                     <p className="mt-1.5 text-xs text-slate-600">
-//                         © {new Date().getFullYear()} Least Action Company Pvt Ltd. Built with Architectural Precision.
-//                     </p>
-//                 </div>
-
-//                 <nav className="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer navigation">
-//                     {FOOTER_LINKS.map((l) => (
-//                         <a
-//                             key={l.label}
-//                             href={l.href}
-//                             className="text-xs text-slate-600 hover:text-slate-400 transition-colors"
-//                         >
-//                             {l.label}
-//                         </a>
-//                     ))}
-//                 </nav>
-//             </div>
-//         </footer>
-//     );
-// }
 
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -115,11 +82,11 @@ export default function Footer() {
     <img
         src={logo}
         alt="Least Action Company Pvt Ltd"
-        className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain"
+        className="h-20 sm:h-22 md:h-20 lg:h-22 w-auto object-contain"
     />
 </Link>
 
-                        <p className="mt-3 max-w-md text-sm sm:text-base text-slate-600 leading-relaxed">
+                        <p className="mt-3 max-w-md text-sm sm:text-base  leading-relaxed">
                             Building premium digital products with clean architecture,
                             scalable engineering, and modern user experiences.
                         </p>
@@ -144,7 +111,7 @@ export default function Footer() {
                                         duration: 0.4,
                                         delay: index * 0.08,
                                     }}
-                                    className={`w-11 h-11 rounded-full border border-slate-200 bg-white shadow-sm flex items-center justify-center text-slate-600 transition-all duration-300 ${social.color}`}
+                                    className={`w-11 h-11 rounded-full border border-slate-200 bg-white shadow-sm flex items-center justify-center  transition-all duration-300 ${social.color}`}
                                 >
                                     <span className="text-lg">
                                         {social.icon}
@@ -153,7 +120,7 @@ export default function Footer() {
                             ))}
                         </div>
 
-                        <p className="mt-5 text-xs sm:text-sm text-slate-500">
+                        <p className="mt-5 text-xs sm:text-sm ">
                             © {new Date().getFullYear()} Least Action Company Pvt Ltd- A unit of SG Groups.
                         </p>
                     </motion.div>
@@ -168,22 +135,22 @@ export default function Footer() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
     >
-        <h3 className="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-6">
+        <h3 className="type-subsection-title text-slate-900 mb-6">
             Company
         </h3>
 
         <div className="space-y-4">
             {[
                 { label: "Home", href: "/" },
-                { label: "Principles", href: "/#about" },
-                { label: "Approach", href: "/#capabilities" },
+                { label: "Principles", href: { pathname: "/", hash: "#about" } },
+                { label: "Approach", href: { pathname: "/", hash: "#capabilities" } },
                 { label: "Case Studies", href: "/projects" },
-                { label: "Contact", href: "/#contact" },
+                { label: "Contact", href: { pathname: "/", hash: "#contact" } },
             ].map((item) => (
                 <Link
                     key={item.label}
                     to={item.href}
-                    className="block text-sm sm:text-base font-medium text-slate-600 hover:text-cobalt transition-colors duration-300"
+                    className="block text-sm sm:text-base font-medium  hover:text-cobalt transition-colors duration-300"
                 >
                     {item.label}
                 </Link>
@@ -198,7 +165,7 @@ export default function Footer() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.15 }}
     >
-        <h3 className="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-6">
+        <h3 className="type-subsection-title text-slate-900 mb-6">
             Contact
         </h3>
 
@@ -207,7 +174,7 @@ export default function Footer() {
                 Least Action Company Pvt Ltd - Vellore
             </p>
 
-            <p className="text-sm sm:text-base leading-7 text-slate-600">
+            <p className="text-sm sm:text-base leading-7 ">
                 No. 9, Thendral Nagar, Sathuvachari,
                 <br />
                 Vellore - 632009
@@ -215,51 +182,32 @@ export default function Footer() {
 
             <a
                 href="mailto:leastactioncompany@gmail.com"
-                className="block text-sm sm:text-base text-slate-600 hover:text-cobalt transition-colors duration-300"
+                className="block text-sm sm:text-base  hover:text-cobalt transition-colors duration-300"
             >
                 leastactioncompany@gmail.com
             </a>
 
             <a
                 href="tel:+918189968881"
-                className="block text-sm sm:text-base text-slate-600 hover:text-cobalt transition-colors duration-300"
+                className="block text-sm sm:text-base  hover:text-cobalt transition-colors duration-300"
             >
                 +91 81899 68881
             </a>
         </div>
     </motion.div>
                     </div>
-                    {/* <motion.nav
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.15 }}
-                        aria-label="Footer navigation"
-                        className="flex flex-wrap gap-x-8 gap-y-4"
-                    >
-                        {FOOTER_LINKS.map((link) => (
-                            <a
-                                key={link.label}
-                                href={link.href}
-                                className="relative text-sm font-medium text-slate-600 hover:text-cobalt transition-colors duration-300 group"
-                            >
-                                {link.label}
-
-                                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-cobalt transition-all duration-300 group-hover:w-full" />
-                            </a>
-                        ))}
-                    </motion.nav> */}
+                    
                 </div>
 
                 {/* Bottom Divider */}
                 <div className="mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs ">
                         Designed for premium visibility and professional presentation.
                     </p>
 
                     <div className="flex items-center gap-3">
                         <span className="w-2 h-2 rounded-full bg-cobalt animate-pulse" />
-                        <span className="text-xs font-medium text-slate-500">
+                        <span className="text-xs font-medium ">
                             Trusted Digital Product Studio
                         </span>
                     </div>

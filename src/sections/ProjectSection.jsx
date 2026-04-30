@@ -78,7 +78,7 @@
 //                             <h3 className="text-xs font-semibold uppercase tracking-widest text-cobalt mb-2">
 //                                 {item.title}
 //                             </h3>
-//                             <p className="text-sm sm:text-[15px] text-slate-600 leading-relaxed">
+//                             <p className="text-sm sm:text-[15px]  leading-relaxed">
 //                                 {item.content}
 //                             </p>
 //                         </div>
@@ -90,7 +90,7 @@
 //                         </h3>
 //                         <ul className="space-y-1.5">
 //                             {(project?.features ?? []).map((feature, i) => (
-//                                 <li key={i} className="flex items-start gap-2 text-sm sm:text-[15px] text-slate-600">
+//                                 <li key={i} className="flex items-start gap-2 text-sm sm:text-[15px] ">
 //                                     <span className="text-cobalt mt-0.5 shrink-0">→</span>
 //                                     {feature}
 //                                 </li>
@@ -124,7 +124,7 @@
 //                     <p className="text-[10px] font-semibold uppercase tracking-widest text-cobalt mb-1">
 //                         Results
 //                     </p>
-//                     <p className="text-sm text-slate-500 leading-relaxed">
+//                     <p className="text-sm  leading-relaxed">
 //                         {project?.results ?? "Delivered with precision and on schedule."}
 //                     </p>
 //                 </div>
@@ -259,7 +259,7 @@ function ProjectCard({ project, index }) {
                                 {item.title}
                             </h3>
 
-                            <p className="text-sm sm:text-[15px] text-slate-600 leading-relaxed">
+                            <p className="text-sm sm:text-[15px]  leading-relaxed">
                                 {item.content}
                             </p>
                         </motion.div>
@@ -282,7 +282,7 @@ function ProjectCard({ project, index }) {
                             {(project?.features ?? []).map((feature, i) => (
                                 <li
                                     key={i}
-                                    className="flex items-start gap-2 text-sm sm:text-[15px] text-slate-600"
+                                    className="flex items-start gap-2 text-sm sm:text-[15px] "
                                 >
                                     <span className="text-cobalt mt-0.5 shrink-0">
                                         →
@@ -338,7 +338,7 @@ function ProjectCard({ project, index }) {
                         Results
                     </p>
 
-                    <p className="text-sm sm:text-[15px] text-slate-600 leading-relaxed">
+                    <p className="text-sm sm:text-[15px]  leading-relaxed">
                         {project?.results ??
                             "Delivered successfully with premium quality and business-focused execution."}
                     </p>

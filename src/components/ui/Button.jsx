@@ -5,6 +5,14 @@ import { Link } from "react-router-dom";
  * @param {"primary"|"ghost"|"outline-dark"} variant
  */
 export default function Button({ to, href, variant = "primary", children, className = "", ...props }) {
+    const linkTarget =
+        typeof to === "string" && to.startsWith("/") && to.includes("#")
+            ? {
+                pathname: to.split("#")[0] || "/",
+                hash: `#${to.split("#")[1]}`,
+            }
+            : to;
+
     const base =
         "inline-flex items-center justify-center gap-2 font-semibold text-sm rounded-full transition-all duration-200";
 
@@ -21,7 +29,7 @@ export default function Button({ to, href, variant = "primary", children, classN
 
     const cls = `${base} ${variants[variant] || variants.primary} ${className}`;
 
-    if (to) return <Link to={to} className={cls} {...props}>{children}</Link>;
+    if (to) return <Link to={linkTarget} className={cls} {...props}>{children}</Link>;
     if (href) return <a href={href} className={cls} {...props}>{children}</a>;
     return <button className={cls} {...props}>{children}</button>;
 }

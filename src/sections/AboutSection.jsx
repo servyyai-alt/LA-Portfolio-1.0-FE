@@ -25,25 +25,25 @@ export default function AboutSection() {
                         transition={{ duration: 0.6 }}
                     >
                         <SectionLabel>Who We Are</SectionLabel>
-                        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-ink tracking-[-0.02em] leading-[1.1]">
+                        <h2 className="type-section-title text-ink">
                             Engineering That
                             <br />
                             <span className="gradient-text">Moves With Purpose</span>
                         </h2>
 
-                        <p className="mt-8 text-base sm:text-lg text-slate-600 leading-[1.7] max-w-xl">
+                        <p className="type-body-copy mt-8 max-w-xl  sm:text-lg">
                             Least Action is a forward-thinking technology company that believes in the
                             principle of maximum output through minimal complexity.
                         </p>
 
-                        <p className="mt-5 text-[15px] text-slate-500 leading-[1.75] max-w-xl">
+                        <p className="type-body-copy mt-5 max-w-xl ">
                             We eliminate digital entropy by architecting systems where precision meets
                             performance. Our mission is to solve complex problems through elegant,
                             resilient engineering that scales with your vision.
                         </p>
 
                         <blockquote className="mt-8 pl-5 border-l-2 border-cobalt">
-                            <p className="text-base italic text-slate-600">
+                            <p className="type-body-copy italic ">
                                 "Architecting the future through precision and calculated restraint."
                             </p>
                         </blockquote>
@@ -72,7 +72,7 @@ export default function AboutSection() {
                                         <h3 className="font-semibold text-ink text-sm sm:text-base mb-1">
                                             {item.title}
                                         </h3>
-                                        <p className="text-sm text-slate-500 leading-relaxed">{item.text}</p>
+                                        <p className="text-sm  leading-relaxed">{item.text}</p>
                                     </div>
                                 </motion.div>
                             ))}

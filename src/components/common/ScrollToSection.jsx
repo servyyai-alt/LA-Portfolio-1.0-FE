@@ -12,15 +12,33 @@ export default function ScrollToSection() {
 
     useEffect(() => {
         if (location.hash) {
-            const el = document.querySelector(location.hash);
-            if (el) {
-                requestAnimationFrame(() => {
+            let attempts = 0;
+            let timeoutId;
+
+            const scrollToHashTarget = () => {
+                const el = document.querySelector(location.hash);
+
+                if (el) {
                     const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
                     window.scrollTo({ top, behavior: "smooth" });
-                });
-            }
-            return;
+                    return;
+                }
+
+                if (attempts < 40) {
+                    attempts += 1;
+                    timeoutId = window.setTimeout(scrollToHashTarget, 50);
+                }
+            };
+
+            scrollToHashTarget();
+
+            return () => {
+                if (timeoutId) {
+                    window.clearTimeout(timeoutId);
+                }
+            };
         }
+
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, [location.pathname, location.hash]);
 
