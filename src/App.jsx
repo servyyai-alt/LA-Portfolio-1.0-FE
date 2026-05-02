@@ -9,6 +9,7 @@ import { AnimatePresence } from "framer-motion";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CallButton from "@/components/layout/CallButton";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import ScrollToSection from "@/components/common/ScrollToSection";
 import { routes } from "@/routes";
@@ -47,6 +48,7 @@ function AnimatedRoutes() {
                 </AnimatePresence>
             </main>
             {!isAdminRoute && <Footer />}
+            {!isAdminRoute && <CallButton />}
             {!isAdminRoute && <WhatsAppButton />}
         </>
     );

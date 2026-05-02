@@ -117,7 +117,7 @@ import spectrum from "@/assets/logo/spectrum.png";
 import cwlogo from "@/assets/logo/cwlogo.png";
 
 const clients = [
-  { name: "Bank Coach", image: bankcoaching },
+  { name: "Smart Bankers Institute", image: bankcoaching },
   { name: "Sports OTT", image: sportsott },
   { name: "Star DMC", image: stardmcLogo },
   { name: "Tvaster Genkalp", image: tvaster },

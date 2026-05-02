@@ -26,4 +26,5 @@ export const FOOTER_LINKS = [
     { label: "Careers", href: "#careers" },
 ];
 
+export const CALL_LINK = "tel:+918189968881";
 export const WHATSAPP_LINK = "https://wa.me/918825965775";
