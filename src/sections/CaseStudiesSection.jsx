@@ -50,12 +50,27 @@ export default function CaseStudiesSection() {
                             className="group bg-cloud rounded-2xl overflow-hidden border border-mist card-lift"
                         >
                             <div className="overflow-hidden h-52">
-                                <img
-                                    src={IMAGE_MAP[item.imageKey]}
-                                    alt={item.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    loading="lazy"
-                                />
+                                {item.link ? (
+                                    <a
+                                        href={item.link}
+                                        aria-label={`Open ${item.title}`}
+                                        className="block h-full"
+                                    >
+                                        <img
+                                            src={IMAGE_MAP[item.imageKey]}
+                                            alt={item.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                                            loading="lazy"
+                                        />
+                                    </a>
+                                ) : (
+                                    <img
+                                        src={IMAGE_MAP[item.imageKey]}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        loading="lazy"
+                                    />
+                                )}
                             </div>
                             <div className="p-6">
                                 <div className="flex items-center justify-between mb-3">

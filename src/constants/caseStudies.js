@@ -7,6 +7,7 @@ export const CASE_STUDIES = [
             "Precision e-commerce infrastructure with algorithmic recommendation engine and sub-100ms latency.",
         tags: ["React", "Node.js"],
         imageKey: "shopping",
+        link: "/projects",
     },
     {
         title: "Mobile App Development",
@@ -15,6 +16,7 @@ export const CASE_STUDIES = [
             "Cross-platform biometric security suite with real-time distributed ledger synchronization.",
         tags: ["Flutter", "Rust"],
         imageKey: "bankcoaching",
+        link: "/projects#project-1",
     },
     {
         title: "Tourism Website",
@@ -23,6 +25,7 @@ export const CASE_STUDIES = [
             "Immersive destination exploration platform utilizing spatial mapping and dynamic content delivery.",
         tags: ["WebGL", "Go"],
         imageKey: "stardmc",
+        link: "/projects#project-9",
     },
     {
         title: "AI Agent",
@@ -31,6 +34,7 @@ export const CASE_STUDIES = [
             "Autonomous enterprise agent specialized in predictive resource allocation and workflow automation.",
         tags: ["PyTorch", "Kafka"],
         imageKey: "servyyai",
+        link: "/projects#project-8",
     },
     {
         title: "Medical Website",
@@ -39,6 +43,7 @@ export const CASE_STUDIES = [
             "High-security telemedicine infrastructure with integrated diagnostic imaging and patient analytics.",
         tags: ["HIPAA", "AWS"],
         imageKey: "tvaster",
+        link: "/projects#project-11",
     },
     {
         title: "Nutrition Website",
@@ -47,6 +52,7 @@ export const CASE_STUDIES = [
             "Bio-individualized nutrition mapping platform with real-time biometric feedback synchronization.",
         tags: ["Vue 3", "Django"],
         imageKey: "myblend",
+        link: "/projects#project-6",
     },
 ];
 

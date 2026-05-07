@@ -9,6 +9,7 @@ const projectdata = [
         title: "Bank Coaching Platform",
         category: "EdTech",
         image: "/assets/project/bankcoaching.png",
+        link: "https://smartbankersinstitute.com/",
         clientOverview:
             "A competitive exam coaching institute focused on banking and government job preparation across India.",
         problem:
@@ -30,6 +31,7 @@ const projectdata = [
         title: "Sports OTT Platform",
         category: "Media & Entertainment",
         image: "/assets/project/sportsott.png",
+        link: "https://zensportslive.com/",
         clientOverview:
             "A sports media company wanting to build a dedicated OTT streaming service for regional sports events.",
         problem:
@@ -45,71 +47,12 @@ const projectdata = [
         results: "Successfully streamed 15+ live events; subscription conversion rate of 18%.",
         feedback: "Not provided",
     },
-    {
+        {
         id: 3,
-        title: "Book My Services",
-        category: "Home Services",
-        image: "/assets/project/bookservice.png",
-        clientOverview:
-            "A home services marketplace connecting customers with verified local service providers.",
-        problem:
-            "The client needed a two-sided marketplace with real-time booking, provider verification, and review management.",
-        solution:
-            "We built a full marketplace with customer app, provider portal, real-time slot booking, and admin dashboard.",
-        features: [
-            "Real-time availability and slot booking",
-            "Provider onboarding and KYC verification",
-            "Review and rating system",
-            "Commission-based billing dashboard",
-        ],
-        results: "100+ service providers onboarded in first month; 4.6/5 average customer rating.",
-        feedback: "The booking flow is seamless and our providers love the portal.",
-    },
-    {
-        id: 4,
-        title: "City Wash",
-        category: "On-Demand Services",
-        image: "/assets/project/citywash.png",
-        clientOverview:
-            "An on-demand laundry and dry-cleaning pickup/delivery service operating in Tier-2 cities.",
-        problem:
-            "Manual order tracking and WhatsApp-based communication was causing errors and customer dissatisfaction.",
-        solution:
-            "We developed a customer app, driver app, and admin panel with live order tracking and automated notifications.",
-        features: [
-            "Customer app with order placement and live tracking",
-            "Driver app with route optimization",
-            "Automated SMS and WhatsApp notifications",
-            "Admin order management and analytics",
-        ],
-        results: "Order errors reduced by 80%; delivery SLA improved from 48hrs to 24hrs.",
-        feedback: "Not provided",
-    },
-    {
-        id: 5,
-        title: "Milo Cabs",
-        category: "Transport & Mobility",
-        image: "/assets/project/milocabs.png",
-        clientOverview:
-            "A regional cab aggregator offering intercity and local rides in South India.",
-        problem:
-            "The client was losing business to larger players due to lack of a professional app and driver management system.",
-        solution:
-            "We built a Ola/Uber-style platform with customer and driver apps, dynamic pricing, and fleet management.",
-        features: [
-            "Real-time driver matching and GPS tracking",
-            "Dynamic surge pricing engine",
-            "In-app payments and trip history",
-            "Fleet management and driver incentive dashboard",
-        ],
-        results: "Onboarded 200+ drivers; 35% increase in repeat bookings within 3 months.",
-        feedback: "Finally we have a platform that matches the big players — our customers love it.",
-    },
-    {
-        id: 6,
         title: "MyBlend Nutrition",
         category: "Health & Wellness",
         image: "/assets/project/myblend.png",
+        link: "https://myblend.in/",
         clientOverview:
             "A personalized nutrition startup offering custom supplement blends based on health assessments.",
         problem:
@@ -125,51 +68,12 @@ const projectdata = [
         results: "Average order value 2.3x industry benchmark; 65% subscription retention at 3 months.",
         feedback: "The quiz-to-purchase flow is magical. Customers spend 8+ minutes on the site.",
     },
-    {
-        id: 7,
-        title: "Pet Care App",
-        category: "Pet Services",
-        image: "/assets/project/petcare.png",
-        clientOverview:
-            "A pet services marketplace offering grooming, vet consultations, boarding, and training.",
-        problem:
-            "The client wanted to unify multiple pet services into one super-app with verified service providers.",
-        solution:
-            "We built a pet super-app with service discovery, provider matching, in-app chat, and vet teleconsultation.",
-        features: [
-            "Multi-category service booking",
-            "Verified provider profiles with ratings",
-            "In-app video vet consultation",
-            "Pet health records and reminders",
-        ],
-        results: "500+ bookings in the first 6 weeks; 4.8/5 App Store rating.",
-        feedback: "Not provided",
-    },
-    {
-        id: 8,
-        title: "Servyy AI",
-        category: "AI / SaaS",
-        image: "/assets/project/servyyai.png",
-        clientOverview:
-            "A B2B SaaS startup building an AI-powered customer service automation platform.",
-        problem:
-            "The client needed an AI agent that could handle customer queries across email, chat, and WhatsApp with human escalation.",
-        solution:
-            "We built an omnichannel AI agent platform with GPT-4 integration, sentiment analysis, and CRM sync.",
-        features: [
-            "AI agent with GPT-4 and custom fine-tuning",
-            "Omnichannel: email, chat, WhatsApp",
-            "Sentiment analysis and escalation routing",
-            "CRM integration (HubSpot, Zoho)",
-        ],
-        results: "Reduced customer response time from 4hrs to under 2 minutes; 60% ticket deflection.",
-        feedback: "The AI accuracy is incredible. Our support costs dropped by 40% in month one.",
-    },
-    {
-        id: 9,
+        {
+        id: 4,
         title: "Star DMC Tourism",
         category: "Travel & Tourism",
         image: "/assets/project/stardmc-ui.png",
+        link: "https://stardmc.com/",
         clientOverview:
             "A Destination Management Company (DMC) offering curated travel packages across the Middle East.",
         problem:
@@ -185,31 +89,12 @@ const projectdata = [
         results: "Onboarded 40+ travel agency partners; 3x increase in online package inquiries.",
         feedback: "The portal is exactly what the industry needed. Our agents book faster than ever.",
     },
-    {
-        id: 10,
-        title: "StayGood",
-        category: "Hospitality",
-        image: "/assets/project/staygood.png",
-        clientOverview:
-            "A boutique hotel aggregator curating unique stay experiences across India.",
-        problem:
-            "The client needed a discovery and booking platform that highlighted the character of boutique properties vs OTA giants.",
-        solution:
-            "We built an editorial-style booking platform with immersive property pages, direct booking engine, and host dashboard.",
-        features: [
-            "Immersive property storytelling pages",
-            "Direct booking engine with room management",
-            "Host property management portal",
-            "Guest review and experience highlights",
-        ],
-        results: "Featured 80+ boutique properties; direct booking rate 45% higher than industry average.",
-        feedback: "Not provided",
-    },
-    {
-        id: 11,
+        {
+        id: 5,
         title: "Tvaster Genkalp",
         category: "Healthcare",
         image: "/assets/project/tvaster.png",
+        link: "https://tvaster.com/",
         clientOverview:
             "A telemedicine and Ayurvedic healthcare provider offering online consultations and herbal products.",
         problem:
@@ -226,10 +111,11 @@ const projectdata = [
         feedback: "Our patients love the ease of the platform. The prescription flow is seamless.",
     },
     {
-        id: 12,
+        id: 6,
         title: "Spectrum Homeopathy",
         category: "Healthcare",
         image: "/assets/project/spectrum-homeopathy.png",
+        link: "https://spectrumhomeopathy.com/",
         clientOverview:
             "A homeopathy clinic chain offering in-person and online consultations across South India.",
         problem:
@@ -246,10 +132,137 @@ const projectdata = [
         feedback: "Not provided",
     },
     {
+        id: 7,
+        title: "Book My Services",
+        category: "Home Services",
+        image: "/assets/project/bookservice.png",
+        link: "https://bookmyservices.com/",    
+        clientOverview:
+            "A home services marketplace connecting customers with verified local service providers.",
+        problem:
+            "The client needed a two-sided marketplace with real-time booking, provider verification, and review management.",
+        solution:
+            "We built a full marketplace with customer app, provider portal, real-time slot booking, and admin dashboard.",
+        features: [
+            "Real-time availability and slot booking",
+            "Provider onboarding and KYC verification",
+            "Review and rating system",
+            "Commission-based billing dashboard",
+        ],
+        results: "100+ service providers onboarded in first month; 4.6/5 average customer rating.",
+        feedback: "The booking flow is seamless and our providers love the portal.",
+    },
+    {
+        id: 8,
+        title: "City Wash",
+        category: "On-Demand Services",
+        image: "/assets/project/citywash.png",
+        link: "https://citywash.co.in/",
+        clientOverview:
+            "An on-demand laundry and dry-cleaning pickup/delivery service operating in Tier-2 cities.",
+        problem:
+            "Manual order tracking and WhatsApp-based communication was causing errors and customer dissatisfaction.",
+        solution:
+            "We developed a customer app, driver app, and admin panel with live order tracking and automated notifications.",
+        features: [
+            "Customer app with order placement and live tracking",
+            "Driver app with route optimization",
+            "Automated SMS and WhatsApp notifications",
+            "Admin order management and analytics",
+        ],
+        results: "Order errors reduced by 80%; delivery SLA improved from 48hrs to 24hrs.",
+        feedback: "Not provided",
+    },
+    {
+        id: 9,
+        title: "Milo Cabs",
+        category: "Transport & Mobility",
+        image: "/assets/project/milocabs.png",
+        link: "https://milocabs.com/",
+        clientOverview:
+            "A regional cab aggregator offering intercity and local rides in South India.",
+        problem:
+            "The client was losing business to larger players due to lack of a professional app and driver management system.",
+        solution:
+            "We built a Ola/Uber-style platform with customer and driver apps, dynamic pricing, and fleet management.",
+        features: [
+            "Real-time driver matching and GPS tracking",
+            "Dynamic surge pricing engine",
+            "In-app payments and trip history",
+            "Fleet management and driver incentive dashboard",
+        ],
+        results: "Onboarded 200+ drivers; 35% increase in repeat bookings within 3 months.",
+        feedback: "Finally we have a platform that matches the big players — our customers love it.",
+    },
+    {
+        id: 10,
+        title: "Pet Care App",
+        category: "Pet Services",
+        image: "/assets/project/petcare.png",
+        link: "https://petcareapp.com/",
+        clientOverview:
+            "A pet services marketplace offering grooming, vet consultations, boarding, and training.",
+        problem:
+            "The client wanted to unify multiple pet services into one super-app with verified service providers.",
+        solution:
+            "We built a pet super-app with service discovery, provider matching, in-app chat, and vet teleconsultation.",
+        features: [
+            "Multi-category service booking",
+            "Verified provider profiles with ratings",
+            "In-app video vet consultation",
+            "Pet health records and reminders",
+        ],
+        results: "500+ bookings in the first 6 weeks; 4.8/5 App Store rating.",
+        feedback: "Not provided",
+    },
+    {
+        id: 11,
+        title: "Servyy AI",
+        category: "AI / SaaS",
+        image: "/assets/project/servyyai.png",
+        link: "https://servyy.ai/",
+        clientOverview:
+            "A B2B SaaS startup building an AI-powered customer service automation platform.",
+        problem:
+            "The client needed an AI agent that could handle customer queries across email, chat, and WhatsApp with human escalation.",
+        solution:
+            "We built an omnichannel AI agent platform with GPT-4 integration, sentiment analysis, and CRM sync.",
+        features: [
+            "AI agent with GPT-4 and custom fine-tuning",
+            "Omnichannel: email, chat, WhatsApp",
+            "Sentiment analysis and escalation routing",
+            "CRM integration (HubSpot, Zoho)",
+        ],
+        results: "Reduced customer response time from 4hrs to under 2 minutes; 60% ticket deflection.",
+        feedback: "The AI accuracy is incredible. Our support costs dropped by 40% in month one.",
+    },
+    {
+        id: 12,
+        title: "StayGood",
+        category: "Hospitality",
+        image: "/assets/project/staygood.png",
+        link: "https://staygood.in/",
+        clientOverview:
+            "A boutique hotel aggregator curating unique stay experiences across India.",
+        problem:
+            "The client needed a discovery and booking platform that highlighted the character of boutique properties vs OTA giants.",
+        solution:
+            "We built an editorial-style booking platform with immersive property pages, direct booking engine, and host dashboard.",
+        features: [
+            "Immersive property storytelling pages",
+            "Direct booking engine with room management",
+            "Host property management portal",
+            "Guest review and experience highlights",
+        ],
+        results: "Featured 80+ boutique properties; direct booking rate 45% higher than industry average.",
+        feedback: "Not provided",
+    },
+    {
         id: 13,
         title: "News & Media Portal",
         category: "Media",
         image: "/assets/project/news.png",
+        link: "https://tamil.news/",
         clientOverview:
             "A regional digital news publication covering politics, business, and lifestyle in Tamil Nadu.",
         problem:
@@ -270,6 +283,7 @@ const projectdata = [
         title: "Arvesta Finance",
         category: "FinTech",
         image: "/assets/project/arvesta-finance.png",
+        link: "https://arvestafinance.com/",
         clientOverview:
             "A wealth management startup offering mutual fund investments, SIPs, and financial planning tools.",
         problem:

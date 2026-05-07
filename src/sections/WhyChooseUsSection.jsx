@@ -47,7 +47,7 @@ const reasons = [
     },
 ];
 const trustItems = [
-    "14+ successful projects delivered",
+    "100+ successful projects delivered",
     "Clients across 3 countries",
     "Agile, transparent process",
 ];

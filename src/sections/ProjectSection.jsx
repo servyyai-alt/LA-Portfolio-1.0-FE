@@ -200,6 +200,7 @@ function ProjectCard({ project, index }) {
 
     return (
         <motion.div
+            id={`project-${project.id ?? index + 1}`}
             ref={ref}
             initial={{ opacity: 0, y: 60 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -304,12 +305,29 @@ function ProjectCard({ project, index }) {
                 {/* IMAGE FIXED */}
                 <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-xl">
                     <div className="overflow-hidden">
-                        <img
-                            src={projectImage}
-                            alt={project?.title}
-                            loading="lazy"
-                            className="w-full h-auto min-h-[320px] sm:min-h-[420px] object-contain bg-white group-hover:scale-105 transition duration-700"
-                        />
+                        {project?.link ? (
+                            <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Open ${project.title} in new tab`}
+                                className="block"
+                            >
+                                <img
+                                    src={projectImage}
+                                    alt={project?.title}
+                                    loading="lazy"
+                                    className="w-full h-auto min-h-[320px] sm:min-h-[420px] object-contain bg-white group-hover:scale-105 transition duration-700 cursor-pointer"
+                                />
+                            </a>
+                        ) : (
+                            <img
+                                src={projectImage}
+                                alt={project?.title}
+                                loading="lazy"
+                                className="w-full h-auto min-h-[320px] sm:min-h-[420px] object-contain bg-white group-hover:scale-105 transition duration-700"
+                            />
+                        )}
                     </div>
                 </div>
 

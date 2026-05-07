@@ -8,6 +8,6 @@ export const STATS = [
 export const HERO_STATS = [
     { num: "5+", label: "Years of Experience" },
     { num: "100+", label: "Happy Clients" },
-    { num: "14+", label: "Projects Shipped" },
+    { num: "100+", label: "Projects Shipped" },
     { num: "3", label: "Countries Served" },
 ];
