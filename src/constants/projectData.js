@@ -8,6 +8,7 @@ const projectdata = [
         id: 1,
         title: "Bank Coaching Platform",
         category: "EdTech",
+        type: "website",
         image: "/assets/project/bankcoaching.png",
         link: "https://smartbankersinstitute.com/",
         clientOverview:
@@ -30,6 +31,7 @@ const projectdata = [
         id: 2,
         title: "Sports OTT Platform",
         category: "Media & Entertainment",
+        type: "website",
         image: "/assets/project/sportsott.png",
         link: "https://zensportslive.com/",
         clientOverview:
@@ -51,6 +53,7 @@ const projectdata = [
         id: 3,
         title: "MyBlend Nutrition",
         category: "Health & Wellness",
+        type: "website",
         image: "/assets/project/myblend.png",
         link: "https://myblend.in/",
         clientOverview:
@@ -72,6 +75,7 @@ const projectdata = [
         id: 4,
         title: "Star DMC Tourism",
         category: "Travel & Tourism",
+        type: "website",
         image: "/assets/project/stardmc-ui.png",
         link: "https://stardmc.com/",
         clientOverview:
@@ -93,6 +97,7 @@ const projectdata = [
         id: 5,
         title: "Tvaster Genkalp",
         category: "Healthcare",
+        type: "website",
         image: "/assets/project/tvaster.png",
         link: "https://tvaster.com/",
         clientOverview:
@@ -114,6 +119,7 @@ const projectdata = [
         id: 6,
         title: "Spectrum Homeopathy",
         category: "Healthcare",
+        type: "website",
         image: "/assets/project/spectrum-homeopathy.png",
         link: "https://spectrumhomeopathy.com/",
         clientOverview:
@@ -135,6 +141,7 @@ const projectdata = [
         id: 7,
         title: "Book My Services",
         category: "Home Services",
+        type: "website",
         image: "/assets/project/bookservice.png",
         link: "https://bookmyservices.com/",    
         clientOverview:
@@ -156,6 +163,7 @@ const projectdata = [
         id: 8,
         title: "City Wash",
         category: "On-Demand Services",
+        type: "website",
         image: "/assets/project/citywash.png",
         link: "https://citywash.co.in/",
         clientOverview:
@@ -177,6 +185,7 @@ const projectdata = [
         id: 9,
         title: "Milo Cabs",
         category: "Transport & Mobility",
+        type: "website",
         image: "/assets/project/milocabs.png",
         link: "https://milocabs.com/",
         clientOverview:
@@ -198,8 +207,9 @@ const projectdata = [
         id: 10,
         title: "Pet Care App",
         category: "Pet Services",
+        type: "app",
         image: "/assets/project/petcare.png",
-        link: "https://petcareapp.com/",
+        link: "https://www.tailmission.com/",
         clientOverview:
             "A pet services marketplace offering grooming, vet consultations, boarding, and training.",
         problem:
@@ -219,6 +229,7 @@ const projectdata = [
         id: 11,
         title: "Servyy AI",
         category: "AI / SaaS",
+        type: "website",
         image: "/assets/project/servyyai.png",
         link: "https://servyy.ai/",
         clientOverview:
@@ -240,6 +251,7 @@ const projectdata = [
         id: 12,
         title: "StayGood",
         category: "Hospitality",
+        type: "website",
         image: "/assets/project/staygood.png",
         link: "https://staygood.in/",
         clientOverview:
@@ -261,6 +273,7 @@ const projectdata = [
         id: 13,
         title: "News & Media Portal",
         category: "Media",
+        type: "website",
         image: "/assets/project/news.png",
         link: "https://tamil.news/",
         clientOverview:
@@ -282,6 +295,7 @@ const projectdata = [
         id: 14,
         title: "Arvesta Finance",
         category: "FinTech",
+        type: "website",
         image: "/assets/project/arvesta-finance.png",
         link: "https://arvestafinance.com/",
         clientOverview:
@@ -299,6 +313,60 @@ const projectdata = [
         results: "₹2Cr+ AUM onboarded in first quarter; zero compliance incidents.",
         feedback: "The platform is robust and our advisors are more productive than ever.",
     },
+    {
+    id: 15,
+    title: "Vallal Foods",
+    category: "Food Manufacturing",
+    type: "website",
+    image: "/assets/project/vallal.png",
+    link: "https://www.vallalfoods.com/",
+    clientOverview:
+        "Vallal Foods is a food manufacturing company offering a diverse range of quality food products, serving customers through retail and distribution channels.",
+    problem:
+        "The company lacked a modern platform to effectively present its products, company values, and business offerings to potential customers and distributors.",
+    solution:
+        "We designed and developed a professional corporate website focused on product presentation, brand storytelling, customer engagement, and lead generation.",
+    features: [
+        "Modern responsive corporate website",
+        "Food product showcase and categorization",
+        "About company and manufacturing information",
+        "Enquiry and contact management forms",
+        "SEO optimization for better search visibility",
+        "Performance-optimized user experience",
+    ],
+    results:
+        "Enhanced digital presence, improved customer trust, and increased business enquiries from potential distributors and customers.",
+    feedback:
+        "A professional website that successfully communicates our brand identity and product offerings.",
+},
+{
+    id: 17,
+    title: "Matrimonial Platform",
+    category: "Relationship & Community",
+    type: "website",
+    image: "/assets/project/sri-andal-matrimony.png",
+    link: "https://www.xn--wkcc6bxbtib3alk6badaocja3c6bbe4cwji6ah0bn5syeedceedj.com/",
+    clientOverview:
+        "A modern matrimonial platform designed to help individuals and families find compatible life partners through secure profile creation, advanced search, and personalized matchmaking features.",
+    problem:
+        "The client required a user-friendly and scalable matrimonial platform that enables users to create detailed profiles, discover suitable matches, and communicate securely while maintaining privacy.",
+    solution:
+        "We developed a responsive matrimonial web application with profile management, partner preference filters, match discovery, secure authentication, and enquiry management features to simplify the matchmaking process.",
+    features: [
+        "User registration and secure authentication",
+        "Detailed profile creation and management",
+        "Partner preference and advanced search filters",
+        "Match discovery and recommendation system",
+        "Profile verification and privacy controls",
+        "Responsive design for mobile and desktop users",
+        "Contact and enquiry management",
+        "SEO-friendly and performance-optimized architecture"
+    ],
+    results:
+        "Improved user engagement, streamlined matchmaking experience, and increased profile registrations through an intuitive and modern platform.",
+    feedback:
+        "The platform delivers a smooth user experience and makes it easier for users to discover compatible matches while maintaining privacy and security."
+},
 ];
 
 export default projectdata;

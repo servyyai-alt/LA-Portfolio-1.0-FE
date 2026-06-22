@@ -47,7 +47,7 @@ export default function HeroSection() {
                         className="type-hero-title mx-auto mt-8 max-w-3xl text-ink"
                     >
                         Modern digital experiences
-                        <span className="block mt-3 bg-[linear-gradient(135deg,#0b0f1e_0%,#1a56ff_46%,#49d6ff_100%)] bg-clip-text text-transparent">
+                        <span className="block mt-3 pb-[9px] bg-[linear-gradient(135deg,#0b0f1e_0%,#1a56ff_46%,#49d6ff_100%)] bg-clip-text text-transparent">
                             built to grow your brand.
                         </span>
                     </motion.h1>

@@ -1,7 +1,7 @@
 export const NAV_LINKS = [
     { label: "Home", to: "/" },
     { label: "About", to: "/", hash: "#about" },
-    { label: "Services", to: "/", hash: "#capabilities" },
+    { label: "Services", to: "/", hash: "#services-industries" },
      {
     label: "Products",
     children: [

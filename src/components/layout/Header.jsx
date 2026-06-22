@@ -32,9 +32,8 @@ export default function Header() {
 
         return location.pathname === link.to;
     };
-
-    return (
-        <header
+return(    
+ <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
                     ? "bg-white/95 backdrop-blur-md shadow-[0_1px_0_rgba(11,15,30,0.08)]"
                     : "bg-white/80 backdrop-blur-sm"
@@ -89,6 +88,8 @@ export default function Header() {
                                 <NavLink
                                   key={child.label}
                                   to={child.to}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
                                   className="block px-4 py-2 text-sm hover:bg-gray-50 hover:text-cobalt"
                                 >
                                   {child.label}
@@ -115,7 +116,7 @@ export default function Header() {
 
                 {/* CTA */}
                 <Link
-                    to={{ pathname: "/", hash: "#contact" }}
+                    to={{ pathname: "/", hash: "#services-industries" }}
                     className="hidden md:inline-flex items-center gap-2 bg-cobalt hover:bg-cobalt-light text-white text-[12px] lg:text-sm font-semibold px-5 lg:px-6 py-2.5 rounded-full transition-all duration-200 shadow-glow-sm hover:shadow-glow hover:-translate-y-0.5"
                 >
                     Get Started

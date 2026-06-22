@@ -6,11 +6,22 @@ import { Link } from "react-router-dom";
  */
 export default function Button({ to, href, variant = "primary", children, className = "", ...props }) {
     const linkTarget =
-        typeof to === "string" && to.startsWith("/") && to.includes("#")
-            ? {
-                pathname: to.split("#")[0] || "/",
-                hash: `#${to.split("#")[1]}`,
-            }
+        typeof to === "string"
+            ? (() => {
+                if (to.startsWith("#")) {
+                    return { pathname: "/", hash: to };
+                }
+
+                if (to.startsWith("/") && to.includes("#")) {
+                    const [pathname, hash] = to.split("#");
+                    return {
+                        pathname: pathname || "/",
+                        hash: hash ? `#${hash}` : "",
+                    };
+                }
+
+                return to;
+            })()
             : to;
 
     const base =
