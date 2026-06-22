@@ -2,7 +2,7 @@ export const CONTACT_DETAILS = [
     {
         iconKey: "location",
         label: "Office",
-        value: "No. 9, Thendral Nagar, Sathuvachari, Vellore - 632009",
+        value: "1st Floor, Vellore Market Committee Building, Opposite Circuit House, Officers Line, Tollgate, Vellore - 632001",
         href: null,
     },
     {
@@ -16,6 +16,12 @@ export const CONTACT_DETAILS = [
         label: "Phone",
         value: "+91 81899 68881",
         href: "tel:+918189968881",
+    },
+      {
+      iconKey: "phone",
+      label: "Support",
+      value: "+91 9488153714",
+      href: "tel:+919488153714",
     },
 ];
 

@@ -175,9 +175,9 @@ export default function Footer() {
             </p>
 
             <p className="text-sm sm:text-base leading-7 ">
-                No. 9, Thendral Nagar, Sathuvachari,
+                1st Floor, Vellore Market Committee Building, Opposite Circuit House, Officers Line, Tollgate,
                 <br />
-                Vellore - 632009
+                Vellore - 632001
             </p>
 
             <a
@@ -192,6 +192,12 @@ export default function Footer() {
                 className="block text-sm sm:text-base  hover:text-cobalt transition-colors duration-300"
             >
                 +91 81899 68881
+            </a>
+            <a
+                href="tel:+919488153714"
+                className="block text-sm sm:text-base  hover:text-cobalt transition-colors duration-300"
+            >
+                +91 9488153714
             </a>
         </div>
     </motion.div>

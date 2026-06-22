@@ -12,6 +12,7 @@ const IndustriesSection = lazy(() => import("@/sections/IndustriesSection"));
 const CaseStudiesSection = lazy(() => import("@/sections/CaseStudiesSection"));
 const ClientProjectsSection = lazy(() => import("@/sections/ClientProjectsSection"));
 const ContactSection = lazy(() => import("@/sections/ContactSection"));
+const ServicesIndustriesSection = lazy(() => import("@/sections/ServicesIndustriesSection"));
 
 // Minimal skeleton for Suspense fallback
 function SectionSkeleton() {
@@ -22,10 +23,13 @@ export default function Home() {
     return (
         <PageTransition>
             <HeroSection />
-            <StatsSection />
             <Suspense fallback={<SectionSkeleton />}>
-                <CapabilitiesSection />
+                <ServicesIndustriesSection />
             </Suspense>
+            <StatsSection />
+            {/* <Suspense fallback={<SectionSkeleton />}>
+                <CapabilitiesSection />
+            </Suspense> */}
             <Suspense fallback={<SectionSkeleton />}>
                 <WhyChooseUsSection />
             </Suspense>
@@ -35,10 +39,10 @@ export default function Home() {
             <Suspense fallback={<SectionSkeleton />}>
                 <MissionVisionSection />
             </Suspense>
-            <Suspense fallback={<SectionSkeleton />}>
+            {/*<Suspense fallback={<SectionSkeleton />}>
                 <IndustriesSection />
             </Suspense>
-            {/* <Suspense fallback={<SectionSkeleton />}>
+             <Suspense fallback={<SectionSkeleton />}>
                 <CaseStudiesSection />
             </Suspense> */}
             <Suspense fallback={<SectionSkeleton />}>

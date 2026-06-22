@@ -8,12 +8,14 @@ import logo from "@/assets/logo.jpeg";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeDropdown, setActiveDropdown] = useState(null);
     const scrolled = useScrolled(20);
     const location = useLocation();
 
     // Close mobile menu on navigation
     useEffect(() => {
         setMenuOpen(false);
+        setActiveDropdown(null);
     }, [location.pathname, location.hash]);
 
     const getLinkTarget = (link) =>
@@ -49,7 +51,7 @@ export default function Header() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-2 lg:gap-3">
+                {/* <nav className="hidden md:flex items-center gap-2 lg:gap-3">
                     {NAV_LINKS.map((link) => (
                         <NavLink
                             key={link.label}
@@ -63,6 +65,52 @@ export default function Header() {
                             {link.label}
                         </NavLink>
                     ))}
+                </nav> */}
+                <nav className="hidden md:flex items-center gap-2 lg:gap-3">
+                  {NAV_LINKS.map((link) => (
+                    <div
+                      key={link.label}
+                      className="relative"
+                      onMouseEnter={() => setActiveDropdown(link.label)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                    >
+                      {link.children ? (
+                        <>
+                          <button
+                            className="nav-link px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium flex items-center gap-1"
+                          >
+                            {link.label}
+                            <span className="lg:text-[10px]">▼</span>
+                          </button>
+                
+                          {activeDropdown === link.label && (
+                            <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-2">
+                              {link.children.map((child) => (
+                                <NavLink
+                                  key={child.label}
+                                  to={child.to}
+                                  className="block px-4 py-2 text-sm hover:bg-gray-50 hover:text-cobalt"
+                                >
+                                  {child.label}
+                                </NavLink>
+                              ))}
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <NavLink
+                          to={getLinkTarget(link)}
+                          className={`nav-link px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium ${
+                            isLinkActive(link)
+                              ? "nav-link-active text-ink"
+                              : "hover:text-cobalt"
+                          }`}
+                        >
+                          {link.label}
+                        </NavLink>
+                      )}
+                    </div>
+                  ))}
                 </nav>
 
                 {/* CTA */}

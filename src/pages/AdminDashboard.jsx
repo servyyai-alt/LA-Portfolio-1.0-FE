@@ -1,309 +1,3 @@
-// import { useEffect, useState } from "react";
-// import { getApiUrl } from "@/utils/api";
-
-// const TOKEN_STORAGE_KEY = "la_admin_token";
-// const INITIAL_FORM = { email: "", password: "" };
-
-// function formatDate(value) {
-//     return new Intl.DateTimeFormat("en-IN", {
-//         dateStyle: "medium",
-//         timeStyle: "short",
-//     }).format(new Date(value));
-// }
-
-// export default function AdminDashboard() {
-//     const [formData, setFormData] = useState(INITIAL_FORM);
-//     const [token, setToken] = useState(() => localStorage.getItem(TOKEN_STORAGE_KEY) || "");
-//     const [contacts, setContacts] = useState([]);
-//     const [adminEmail, setAdminEmail] = useState("");
-//     const [status, setStatus] = useState({ type: "", message: "" });
-//     const [isSubmitting, setIsSubmitting] = useState(false);
-//     const [isLoadingContacts, setIsLoadingContacts] = useState(false);
-
-//     useEffect(() => {
-//         if (!token) {
-//             return;
-//         }
-
-//         loadSession(token);
-//         loadContacts(token);
-//     }, [token]);
-
-//     function handleChange(event) {
-//         const { name, value } = event.target;
-//         setFormData((prev) => ({ ...prev, [name]: value }));
-//     }
-
-//     function handleLogout() {
-//         localStorage.removeItem(TOKEN_STORAGE_KEY);
-//         setToken("");
-//         setContacts([]);
-//         setAdminEmail("");
-//         setStatus({ type: "success", message: "Logged out successfully." });
-//         setFormData(INITIAL_FORM);
-//     }
-
-//     async function loadSession(authToken) {
-//         try {
-//             const response = await fetch(getApiUrl("/api/admin/session"), {
-//                 headers: {
-//                     Authorization: `Bearer ${authToken}`,
-//                 },
-//             });
-
-//             const payload = await response.json().catch(() => null);
-
-//             if (!response.ok) {
-//                 throw new Error(payload?.message || "Unable to validate your session.");
-//             }
-
-//             setAdminEmail(payload?.data?.admin?.email || "");
-//         } catch (error) {
-//             localStorage.removeItem(TOKEN_STORAGE_KEY);
-//             setToken("");
-//             setStatus({
-//                 type: "error",
-//                 message: error.message || "Your session expired. Please log in again.",
-//             });
-//         }
-//     }
-
-//     async function loadContacts(authToken) {
-//         setIsLoadingContacts(true);
-
-//         try {
-//             const response = await fetch(getApiUrl("/api/contacts"), {
-//                 headers: {
-//                     Authorization: `Bearer ${authToken}`,
-//                 },
-//             });
-
-//             const payload = await response.json().catch(() => null);
-
-//             if (!response.ok) {
-//                 throw new Error(payload?.message || "Unable to load contacts.");
-//             }
-
-//             setContacts(payload?.data || []);
-//         } catch (error) {
-//             setStatus({
-//                 type: "error",
-//                 message: error.message || "Unable to load contacts.",
-//             });
-//         } finally {
-//             setIsLoadingContacts(false);
-//         }
-//     }
-
-//     async function handleSubmit(event) {
-//         event.preventDefault();
-//         setIsSubmitting(true);
-//         setStatus({ type: "", message: "" });
-
-//         try {
-//             const response = await fetch(getApiUrl("/api/admin/login"), {
-//                 method: "POST",
-//                 headers: {
-//                     "Content-Type": "application/json",
-//                 },
-//                 body: JSON.stringify({
-//                     email: formData.email.trim(),
-//                     password: formData.password,
-//                 }),
-//             });
-
-//             const payload = await response.json().catch(() => null);
-
-//             if (!response.ok) {
-//                 throw new Error(payload?.message || "Unable to log in.");
-//             }
-
-//             const nextToken = payload?.data?.token;
-//             const nextAdminEmail = payload?.data?.admin?.email || formData.email.trim();
-
-//             localStorage.setItem(TOKEN_STORAGE_KEY, nextToken);
-//             setToken(nextToken);
-//             setAdminEmail(nextAdminEmail);
-//             setFormData(INITIAL_FORM);
-//             setStatus({ type: "success", message: "Admin login successful." });
-//         } catch (error) {
-//             setStatus({
-//                 type: "error",
-//                 message: error.message || "Unable to log in.",
-//             });
-//         } finally {
-//             setIsSubmitting(false);
-//         }
-//     }
-
-//     return (
-//         <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(26,86,255,0.12),_transparent_38%),linear-gradient(180deg,_#f8fbff_0%,_#eef4ff_100%)] px-5 py-24 sm:px-8">
-//             <div className="mx-auto flex max-w-6xl flex-col gap-8">
-//                 <div className="rounded-[32px] border border-white/70 bg-white/85 p-8 shadow-[0_30px_80px_rgba(30,64,175,0.12)] backdrop-blur">
-//                     <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cobalt">
-//                         Admin Access
-//                     </p>
-//                     <h1 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
-//                         Contact inbox for Least Action
-//                     </h1>
-//                     <p className="mt-3 max-w-2xl text-sm leading-6  sm:text-base">
-//                         Sign in to review every contact submission, including who reached out,
-//                         their email, and the project brief they shared.
-//                     </p>
-//                 </div>
-
-//                 {!token ? (
-//                     <div className="mx-auto w-full max-w-lg rounded-[28px] border border-slate-200 bg-white p-8 shadow-xl">
-//                         <h2 className="text-2xl font-semibold text-slate-900">Admin login</h2>
-//                         <p className="mt-2 text-sm ">
-//                             Use the admin credentials configured in the backend environment.
-//                         </p>
-
-//                         <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
-//                             <label className="block">
-//                                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ">
-//                                     Email
-//                                 </span>
-//                                 <input
-//                                     className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-cobalt focus:ring-2 focus:ring-cobalt/10"
-//                                     name="email"
-//                                     type="email"
-//                                     value={formData.email}
-//                                     onChange={handleChange}
-//                                     placeholder="admin@example.com"
-//                                     required
-//                                 />
-//                             </label>
-
-//                             <label className="block">
-//                                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ">
-//                                     Password
-//                                 </span>
-//                                 <input
-//                                     className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-cobalt focus:ring-2 focus:ring-cobalt/10"
-//                                     name="password"
-//                                     type="password"
-//                                     value={formData.password}
-//                                     onChange={handleChange}
-//                                     placeholder="Enter your admin password"
-//                                     required
-//                                 />
-//                             </label>
-
-//                             {status.message && (
-//                                 <p className={`text-sm ${status.type === "error" ? "text-rose-500" : "text-emerald-600"}`}>
-//                                     {status.message}
-//                                 </p>
-//                             )}
-
-//                             <button
-//                                 type="submit"
-//                                 disabled={isSubmitting}
-//                                 className="w-full rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
-//                             >
-//                                 {isSubmitting ? "Signing in..." : "Sign in"}
-//                             </button>
-//                         </form>
-//                     </div>
-//                 ) : (
-//                     <div className="grid gap-6">
-//                         <div className="flex flex-col gap-4 rounded-[28px] border border-slate-200 bg-white p-6 shadow-lg sm:flex-row sm:items-center sm:justify-between">
-//                             <div>
-//                                 <p className="text-sm font-semibold uppercase tracking-[0.2em] ">
-//                                     Signed in
-//                                 </p>
-//                                 <p className="mt-2 text-lg font-semibold text-slate-900">{adminEmail}</p>
-//                             </div>
-
-//                             <div className="flex flex-wrap gap-3">
-//                                 <button
-//                                     type="button"
-//                                     onClick={() => loadContacts(token)}
-//                                     className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold  transition hover:border-slate-400 hover:text-slate-950"
-//                                 >
-//                                     Refresh contacts
-//                                 </button>
-//                                 <button
-//                                     type="button"
-//                                     onClick={handleLogout}
-//                                     className="rounded-full bg-rose-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-rose-600"
-//                                 >
-//                                     Log out
-//                                 </button>
-//                             </div>
-//                         </div>
-
-//                         {status.message && (
-//                             <p className={`text-sm ${status.type === "error" ? "text-rose-500" : "text-emerald-600"}`}>
-//                                 {status.message}
-//                             </p>
-//                         )}
-
-//                         <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-xl">
-//                             <div className="border-b border-slate-100 px-6 py-5">
-//                                 <h2 className="text-xl font-semibold text-slate-900">Submitted contacts</h2>
-//                                 <p className="mt-1 text-sm ">
-//                                     {isLoadingContacts
-//                                         ? "Loading contact submissions..."
-//                                         : `${contacts.length} contact submission${contacts.length === 1 ? "" : "s"} found.`}
-//                                 </p>
-//                             </div>
-
-//                             <div className="overflow-x-auto">
-//                                 <table className="min-w-full divide-y divide-slate-100">
-//                                     <thead className="bg-slate-50">
-//                                         <tr>
-//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] ">
-//                                                 Name
-//                                             </th>
-//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] ">
-//                                                 Email
-//                                             </th>
-//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] ">
-//                                                 Project brief
-//                                             </th>
-//                                             <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] ">
-//                                                 Submitted
-//                                             </th>
-//                                         </tr>
-//                                     </thead>
-//                                     <tbody className="divide-y divide-slate-100">
-//                                         {contacts.map((contact) => (
-//                                             <tr key={contact._id} className="align-top">
-//                                                 <td className="px-6 py-5 text-sm font-semibold text-slate-900">
-//                                                     {contact.name}
-//                                                 </td>
-//                                                 <td className="px-6 py-5 text-sm ">
-//                                                     <a className="hover:text-cobalt" href={`mailto:${contact.email}`}>
-//                                                         {contact.email}
-//                                                     </a>
-//                                                 </td>
-//                                                 <td className="px-6 py-5 text-sm leading-6 ">
-//                                                     {contact.projectBrief}
-//                                                 </td>
-//                                                 <td className="px-6 py-5 text-sm ">
-//                                                     {formatDate(contact.createdAt)}
-//                                                 </td>
-//                                             </tr>
-//                                         ))}
-//                                         {!isLoadingContacts && contacts.length === 0 && (
-//                                             <tr>
-//                                                 <td colSpan="4" className="px-6 py-10 text-center text-sm ">
-//                                                     No contact messages yet.
-//                                                 </td>
-//                                             </tr>
-//                                         )}
-//                                     </tbody>
-//                                 </table>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 )}
-//             </div>
-//         </div>
-//     );
-// }
-
 import { useEffect, useState } from "react";
 import { getApiUrl } from "@/utils/api";
 
@@ -346,11 +40,15 @@ export default function AdminDashboard() {
   const [status, setStatus] = useState({ type: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoadingContacts, setIsLoadingContacts] = useState(false);
+  const [leads, setLeads] = useState([]);
+  const [isLoadingLeads, setIsLoadingLeads] = useState(false);
+
 
   useEffect(() => {
     if (!token) return;
     loadSession(token);
     loadContacts(token);
+    loadDetails(token);
   }, [token]);
 
   function handleChange(e) {
@@ -362,6 +60,7 @@ export default function AdminDashboard() {
     localStorage.removeItem(TOKEN_STORAGE_KEY);
     setToken("");
     setContacts([]);
+    setLeads([]);
     setAdminEmail("");
     setFormData(INITIAL_FORM);
     setStatus({ type: "success", message: "Session terminated." });
@@ -409,6 +108,29 @@ export default function AdminDashboard() {
       });
     } finally {
       setIsLoadingContacts(false);
+    }
+  }
+
+   async function loadDetails(authToken) {
+    setIsLoadingLeads(true);
+    try {
+      const response = await fetch(getApiUrl("/api/leads"), {
+        headers: { Authorization: `Bearer ${authToken}` },
+      });
+
+      const payload = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(payload?.message || "Unable to load contacts.");
+      }
+
+      setLeads(payload?.data || []);
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: error.message || "Unable to load contacts.",
+      });
+    } finally {
+      setIsLoadingLeads(false);
     }
   }
 
@@ -549,7 +271,7 @@ export default function AdminDashboard() {
             <div className="grid gap-5 md:grid-cols-3">
               <div className="rounded-2xl border bg-white p-6 shadow-sm">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Total Submissions</p>
-                <h3 className="mt-3 text-3xl font-bold">{isLoadingContacts ? "—" : contacts.length}</h3>
+                <h3 className="mt-3 text-3xl font-bold">{isLoadingLeads ? "—" : leads.length}</h3>
               </div>
 
               <div className="rounded-2xl border bg-white p-6 shadow-sm">
@@ -597,9 +319,9 @@ export default function AdminDashboard() {
 
             <div className="overflow-hidden rounded-3xl border bg-white shadow-sm">
               <div className="flex items-center justify-between border-b px-6 py-5">
-                <h2 className="text-lg font-semibold">Submitted Contacts</h2>
+                <h2 className="text-lg font-semibold">Submitted Leads</h2>
                 <span className="text-sm text-slate-400">
-                  {contacts.length} records
+                  {leads.length} records
                 </span>
               </div>
 
@@ -607,7 +329,7 @@ export default function AdminDashboard() {
                 <table className="w-full min-w-[800px]">
                   <thead className="bg-slate-50">
                     <tr>
-                      {["Name", "Email", "Project Brief", "Submitted"].map((item) => (
+                      {["Name", "Email", "Phone", "Project Requirement","City", "Submitted"].map((item) => (
                         <th
                           key={item}
                           className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.15em] text-slate-400"
@@ -619,36 +341,45 @@ export default function AdminDashboard() {
                   </thead>
 
                   <tbody>
-                    {isLoadingContacts ? (
+                    {isLoadingLeads ? (
                       <tr>
                         <td colSpan="4" className="px-6 py-16 text-center text-slate-400">
                           Fetching records...
                         </td>
                       </tr>
-                    ) : contacts.length === 0 ? (
+                    ) : leads.length === 0 ? (
                       <tr>
                         <td colSpan="4" className="px-6 py-16 text-center text-slate-400">
                           No submissions yet
                         </td>
                       </tr>
                     ) : (
-                      contacts.map((contact) => (
-                        <tr key={contact._id} className="border-t hover:bg-indigo-50/40">
-                          <td className="px-6 py-5 font-semibold">{contact.name}</td>
+                      leads.map((lead) => (
+                        <tr key={lead._id} className="border-t hover:bg-indigo-50/40">
+                          <td className="px-6 py-5 font-semibold">{lead.name}</td>
                           <td className="px-6 py-5">
                             <a
-                              href={`mailto:${contact.email}`}
+                              href={`mailto:${lead.email}`}
                               className="font-mono text-indigo-600 hover:underline"
                             >
-                              {contact.email}
+                              {lead.email}
+                            </a>
+                          </td>
+                          <td className="px-6 py-5">
+                            <a
+                              href={`tel:${lead.phone}`}
+                              className="font-mono text-indigo-600 hover:underline"
+                            >
+                              {lead.phone}
                             </a>
                           </td>
                           <td className="max-w-md px-6 py-5 ">
-                            {contact.projectBrief}
+                            {lead.projectRequirement}
                           </td>
+                            <td className="px-6 py-5">{lead.city}</td>
                           <td className="px-6 py-5">
                             <span className="rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-1 text-xs font-medium ">
-                              {formatDate(contact.createdAt)}
+                              {formatDate(lead.createdAt)}
                             </span>
                           </td>
                         </tr>
