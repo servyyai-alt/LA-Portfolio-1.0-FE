@@ -13,25 +13,21 @@ export const useLeadForm = () => {
   const [formData, setFormData] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState({
+    type: "",
+    message: "",
+  });
 
   const validate = () => {
     const newErrors = {};
 
-    if (!formData.name.trim())
-      newErrors.name = "Name required";
-
-    if (!formData.email.trim())
-      newErrors.email = "Email required";
-
-    if (!formData.phone.trim())
-      newErrors.phone = "Phone required";
-
-    if (!formData.city.trim())
-      newErrors.city = "City required";
-
-    if (!formData.projectRequirement)
-      newErrors.projectRequirement =
-        "Project requirement required";
+    if (!formData.name.trim()) newErrors.name = "Name required";
+    if (!formData.email.trim()) newErrors.email = "Email required";
+    if (!formData.phone.trim()) newErrors.phone = "Phone required";
+    if (!formData.city.trim()) newErrors.city = "City required";
+    if (!formData.projectRequirement) {
+      newErrors.projectRequirement = "Project requirement required";
+    }
 
     setErrors(newErrors);
 
@@ -39,19 +35,26 @@ export const useLeadForm = () => {
   };
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
 
     setErrors((prev) => ({
       ...prev,
-      [e.target.name]: "",
+      [name]: "",
     }));
+
+    if (status.type) {
+      setStatus({ type: "", message: "" });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus({ type: "", message: "" });
 
     if (!validate()) return;
 
@@ -60,14 +63,19 @@ export const useLeadForm = () => {
 
       await submitLead(formData);
 
-      alert("Enquiry submitted successfully");
-
       setFormData(initialForm);
+      setStatus({
+        type: "success",
+        message:
+          "Thanks! Your lead has been submitted.",
+      });
     } catch (error) {
-      alert(
-        error?.response?.data?.message ||
-          "Something went wrong"
-      );
+      setStatus({
+        type: "error",
+        message:
+          error?.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      });
     } finally {
       setLoading(false);
     }
@@ -77,6 +85,7 @@ export const useLeadForm = () => {
     formData,
     errors,
     loading,
+    status,
     handleChange,
     handleSubmit,
   };
